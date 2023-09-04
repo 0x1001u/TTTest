@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-    val TAG = "tttest"
+    val TAG = javaClass.simpleName
 
     fun Context.startApp(packageName: String, activityName: String){
        try {
@@ -65,7 +65,6 @@ class MainActivity : ComponentActivity() {
             Button(onClick = {
                 startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS).apply {
                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-
                 })
             }) {
                 Text("Enable Service")
